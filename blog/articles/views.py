@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 
 # Create your views here.
+from models import Article
 
-def home(request):
-    return render(request, 'static_handler.html', {})
+
+def archive(request):
+    return render(request, 'archive.html', {"posts": Article.objects.all()})
